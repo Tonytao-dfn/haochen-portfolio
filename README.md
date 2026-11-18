@@ -7,6 +7,23 @@ React 18 + Vite 5 实现，已打包成**单文件 HTML**，双击可开、也�
 
 ---
 
+## 〇、当前状态（已经替你做完的部分）
+
+这个文件夹**已经是一个合法的 git 仓库**了：分支 `main`，42 个文件已提交（commit `4fe1e6e`），工作区干净。
+初始化用的是 GitHub Desktop 自带的 git（`%LOCALAPPDATA%\GitHubDesktop\app-3.6.11\resources\app\git\cmd\git.exe`，版本 2.56.1），所以本机不需要再单独装 Git。
+
+因此你现在在 GitHub Desktop 里可以直接：
+
+1. 菜单 **File → Add local repository…** → 选中本文件夹 `haochen-portfolio` → Add
+2. 顶部出现 `haochen-portfolio` 仓库后，点右上角 **Publish repository**
+   - Name 保持 `haochen-portfolio`（它会成为地址里的仓库名）
+   - **取消勾选 "Keep this code private"**（私有仓库不能免费开 Pages）
+3. 发布完成后，去仓库网页 **Settings → Pages**，Source 选 `Deploy from a branch`，Branch `main`，Folder `/docs` → Save
+
+提交作者目前设为「陶昊晨 / 524352059@qq.com」，可在 GitHub Desktop 的 Repository settings 里改。想让提交显示你的 GitHub 头像，邮箱要和你账号绑定的邮箱一致。
+
+---
+
 ## 一、目录说明
 
 ```
@@ -54,13 +71,14 @@ haochen-portfolio/
 
 ```bash
 cd "C:\Users\ZhuanZ\Doubao\chats\2026-11-18\new-chat\haochen-portfolio"
-git init
-git add .
-git commit -m "portfolio v1: 单文件站点 + 源码"
-git branch -M main
+git branch -M main              # 已存在，可跳过
 git remote add origin https://github.com/<你的用户名>/haochen-portfolio.git
 git push -u origin main
 ```
+
+> 本地已 init 并有一次提交，所以这里不用再 `git init`。
+> 如果不想装 Git，可以直接调用 GitHub Desktop 自带的那份：
+> `& "$env:LOCALAPPDATA\GitHubDesktop\app-3.6.11\resources\app\git\cmd\git.exe" push -u origin main`
 
 > 远程仓库要先在 GitHub 网页上建好（空仓库，公开）。
 > 推送时若要求登录，用 GitHub 的 Personal Access Token 当密码（Settings → Developer settings → Tokens）。
