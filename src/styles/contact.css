@@ -1,0 +1,236 @@
+.contact {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+  border-top: 1px solid var(--line);
+  background:
+    radial-gradient(70% 50% at 50% 0%, rgba(201, 244, 92, 0.045), transparent 62%),
+    var(--bg);
+}
+
+.contact__inner {
+  position: relative;
+  z-index: 2;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding-block: 88px 36px;
+}
+
+.contact__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid var(--line);
+}
+
+.contact__status {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  color: var(--dim);
+}
+
+.contact__main {
+  flex: 1;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 300px;
+  align-items: start;
+  gap: clamp(40px, 5vw, 96px);
+  padding-block: clamp(40px, 5vw, 72px);
+}
+
+.contact__left {
+  min-width: 0;
+}
+
+.contact__title {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(52px, 6vw, 100px);
+  line-height: 1.14;
+  letter-spacing: 0.02em;
+  color: var(--ink);
+}
+
+.contact__note {
+  margin: 26px 0 0;
+  max-width: 470px;
+  font-size: 14px;
+  line-height: 1.9;
+  color: var(--body);
+}
+
+.contact__mail {
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: clamp(32px, 3vw, 48px);
+  padding-bottom: 10px;
+  align-self: flex-start;
+  font-size: clamp(22px, 2.4vw, 34px);
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  color: var(--ink);
+  border-bottom: 1px solid var(--line-2);
+  transition: color 0.4s var(--ease), border-color 0.4s var(--ease);
+}
+
+.contact__mail:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+.contact__mail-arrow {
+  font-size: 0.7em;
+  transition: transform 0.4s var(--ease);
+}
+
+.contact__mail:hover .contact__mail-arrow {
+  transform: translate(4px, -4px);
+}
+
+/* ---------- 合作范围 ---------- */
+
+.contact__scope {
+  align-self: center;
+  padding-top: 16px;
+  border-top: 1px solid var(--line-2);
+}
+
+.contact__scope-k {
+  font-family: var(--font-mono);
+  font-size: 9.5px;
+  letter-spacing: 0.2em;
+  color: var(--mute);
+}
+
+.contact__scope-list {
+  margin: 18px 0 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+}
+
+.scope-row {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  padding: 11px 0;
+  border-top: 1px solid var(--line);
+  font-size: 13.5px;
+  color: var(--ink-2);
+}
+
+.scope-row__i {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.1em;
+  color: var(--mute);
+}
+
+/* ---------- 联系信息行 ---------- */
+
+.contact__rows {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 24px;
+  margin: 0 0 34px;
+  padding: 22px 0 0;
+  list-style: none;
+  border-top: 1px solid var(--line);
+}
+
+.crow {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.crow__k {
+  font-family: var(--font-mono);
+  font-size: 9.5px;
+  letter-spacing: 0.2em;
+  color: var(--mute);
+}
+
+.crow__v {
+  font-size: 14px;
+  color: var(--ink-2);
+  transition: color 0.35s var(--ease);
+}
+
+a.crow__v:hover {
+  color: var(--accent);
+}
+
+/* ---------- 页脚 ---------- */
+
+.contact__foot {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding-top: 18px;
+  border-top: 1px solid var(--line);
+  font-family: var(--font-mono);
+  font-size: 9.5px;
+  letter-spacing: 0.14em;
+  color: var(--mute);
+}
+
+.contact__top-link {
+  transition: color 0.35s var(--ease);
+}
+
+.contact__top-link:hover {
+  color: var(--accent);
+}
+
+/* ---------- 底部巨型字 ---------- */
+
+.contact__ghost {
+  position: absolute;
+  z-index: 0;
+  left: 0;
+  right: 0;
+  bottom: -0.16em;
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: 9vw;
+  line-height: 0.78;
+  letter-spacing: -0.03em;
+  text-align: center;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(233, 230, 223, 0.05);
+  pointer-events: none;
+  user-select: none;
+  white-space: nowrap;
+}
+
+@media (max-width: 1100px) {
+  .contact__main {
+    grid-template-columns: 1fr;
+  }
+  .contact__scope {
+    display: none;
+  }
+  .contact__rows {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    row-gap: 22px;
+  }
+  .contact__foot {
+    flex-wrap: wrap;
+  }
+  .contact__foot-mid {
+    display: none;
+  }
+}
